@@ -1,0 +1,16 @@
+name: Testing
+on: 
+  push: 
+    branches: [main]
+
+jobs:
+  prod:
+    name: Production
+    environment: prod
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: testing
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
